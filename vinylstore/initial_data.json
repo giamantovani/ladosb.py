@@ -1,0 +1,24 @@
+[
+    {
+        "model": "vinylstore.disco",
+        "pk": 1,
+        "fields": {
+            "titulo": "Dark side of the moon",
+            "artista": "Pink Floyd",
+            "precio": "20.00",
+            "descripcion": "Rock Progresivo",
+            "imagen": "img/Dark_Side_of_the_Moon.png"
+        }
+    },
+    {
+        "model": "vinylstore.disco",
+        "pk": 2,
+        "fields": {
+            "titulo": "Elephant",
+            "artista": "White Stripes",
+            "precio": "15.00",
+            "descripcion": "Rock Alternativo",
+            "imagen": "img/Elephant_The_White_Stripes.png"
+        }
+    }
+]

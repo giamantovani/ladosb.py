@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Editar Disco{% else %}Nuevo Disco{% endif %}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #formulario {
+            background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+            )
+            ,url('{% static "img/formulario.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            padding: 8%;
+            padding-bottom: 0%;
+            display: flex;
+        }
+        #formulario h2 {
+            color: rgb(211, 140, 140);
+        }
+        #formulario h4 {
+            margin-bottom: 7px;
+            color: rgb(251, 225, 225);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block; 
+            margin-bottom: 5px; 
+            color: white; 
+        }
+        .form-control {
+            width: 100%; 
+            padding: 10px; 
+            border-radius: 4px;
+            border: 1px solid #ced4da; 
+            background-color: #fff; 
+        }
+        .button-group {
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo2.png' %}" alt="LADOS B" height="50">
+        </a>
+        <a class="navbar-brand" href="#">LADOS B</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'compra' %}">Compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'coleccion' %}">Colección</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Intercambia</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form>
+                <a href="carrito.html"><button type="button" class="btn btn-outline-danger ">Carrito de compra</button></a>  
+            </form>          
+        </div>
+    </nav>
+
+    <section id="formulario">
+        <div class="container mt-5">
+            <h2 class="mb-4">{% if form.instance.pk %}Editar Disco{% else %}Nuevo Disco{% endif %}</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <h4>
+                    {{ form.titulo.label_tag }}
+                    {{ form.titulo }}
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <h4>
+                    {{ form.artista.label_tag }}
+                    {{ form.artista }}
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <h4>
+                    {{ form.precio.label_tag }}
+                    {{ form.precio }}
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <h4>
+                    {{ form.descripcion.label_tag }}
+                    {{ form.descripcion }}
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <h4>
+                    {{ form.tracklist.label_tag }}
+                    {{ form.tracklist }}
+                    </h4>
+                </div>
+                <div class="form-group">
+                    <h4>
+                    {{ form.imagen.label_tag }}
+                    {{ form.imagen }}
+                    </h4>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-danger">Guardar</button>
+                    <a href="{% url 'lista_discos' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

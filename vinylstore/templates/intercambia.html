@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LADOS B</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #formulario{
+        background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+        ,url('{% static "img/formulario.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 8%;
+        padding-bottom: 0%;
+        display: flex;
+        }
+        #formulario h2{
+        color: white;
+        }
+
+        #formulario h4{
+            margin-bottom: 7px;
+            color: rgb(251, 225, 225);
+        }
+
+        .form{
+            width: 100%;
+            height: 100%;
+        }
+        .describe{
+            margin-top: 3%;
+        }
+
+        #formulario .button{
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo2.png' %}" alt="LADOS B" height="50">
+        </a>
+        <a class="navbar-brand" href="#">LADOS B</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'compra' %}">Compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="js/api.html">Colección</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Intercambia</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form>
+                <a href="carrito.html"><button type="button" class="btn btn-outline-danger ">Carrito de compra</button></a>  
+              </form>          
+        </div>
+    </nav>
+
+    <section id="formulario">
+        <div class="container mt-5">
+            <h2>¿Qué vinilo tienes para ofrecer?</h2>
+            <form action="publicar.php" method="post" class="mt-5" onsubmit="return validacionBanda(event)" >
+
+                <div class="form">
+                    <h4><label for="nombre">Nombre</label></h4>
+                    <input type="text" class="form" name="nombre" id="nombre" placeholder="¿Cuál es tu nombre?">
+                </div>
+
+                <div class="form">
+                    <h4><label for="banda">Banda</label></h4>
+                    <input type="text" class="form" name="banda" id="banda" placeholder="Ingresa el nombre de la banda">
+                </div>
+
+                <div class="form">
+                    <h4><label for="album">Álbum</label></h4>
+                    <input type="text" class="form" name="album" id="album" placeholder="Ingresa el nombre del álbum">
+                </div>
+            
+                <div class="form">
+                    <h4><label for="estado">Estado</label></h4>
+                    <select class="form" name="estado" id="estado">
+                        <option>¿Cuál es el estado de tu vinilo?</option>
+                        <option>Usado</option>
+                        <option>Primera edición</option>
+                        <option>Edición limitada</option>
+                        <option>Nuevo</option>
+                    </select>
+                </div>
+
+                <div class="form">
+                    <h4><label for="estilo">Estilo musical</label></h4>
+                    <select class="form" name="estilo" id="estilo">
+                        <option>Selecciona un estilo</option>
+                        <option>Rock progresivo</option>
+                        <option>Jazz</option>
+                        <option>Blues</option>
+                    </select>
+                </div>
+
+                <div class="form">
+                    <h4><label for="correo">Correo</label></h4>
+                    <input type="email" class="form" name="correo" id="correo" placeholder="Ingresa tu correo electrónico">
+                </div>
+
+                <button  type="submit" class="button">Publicar</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; LADOS B 2024</p>
+        </div>
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+</html>

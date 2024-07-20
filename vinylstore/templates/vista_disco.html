@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ disco.titulo }} - {{ disco.artista }}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tracklist {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .tracklist li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'img/logo2.png' %}" alt="LADOS B" height="50">
+        </a>
+        <a class="navbar-brand" href="#">LADOS B</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'compra' %}">Compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'coleccion' %}">Colección</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nuevo_disco' %}">Intercambia</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <form>
+                <a href="carrito.html"><button type="button" class="btn btn-outline-danger">Carrito de compra</button></a>  
+            </form>          
+        </div>
+    </nav>
+
+    <section id="fondo">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{ disco.imagen.url }}" alt="{{ disco.titulo }}" class="img-fluid">
+                    </div>
+                    <div class="col-md-8">
+                        <h2>{{ disco.titulo }}</h2>
+                        <h4>{{ disco.artista }}</h4>
+                        <p>Blues Rock, Garage Rock, Alternative Rock</p>
+                        <p><strong>Año:</strong> {{ disco.ano }}</p>
+                        <p><strong>Estado:</strong> {{ disco.estado }}</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h5>Tracklist:</h5>
+                    {% if disco.tracklist %}
+                        <ul class="tracklist">
+                            {% for track in disco.tracklist.splitlines %}
+                                <li>{{ track }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No tracklist available.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="border p-3 mb-3">
+                    <p><strong>Primera edición:</strong> <a href="https://www.discogs.com/master/10341">m10341</a></p>
+                    <hr>
+                    <p><strong>A la venta en Lados B:</strong></p>
+                    <p>1400 copias a ${{ disco.precio }} dólares</p>
+                    <p><a href="{% url 'nuevo_disco' %}">Vende una copia</a></p>
+                    <hr>
+                    <button class="btn btn-danger btn-block">Comprar ahora</button>
+                </div>
+                <div class="border p-3">
+                    <h5>Estadísticas:</h5>
+                    <p><strong>Lo tienen:</strong> 80970</p>
+                    <p><strong>Lo quieren:</strong> 36937</p>
+                    <p><strong>Calificación promedio:</strong> 4.51 / 5</p>
+                    <p><strong>Valoraciones:</strong> 6126</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; LADOS B 2024</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
