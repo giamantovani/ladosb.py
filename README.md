@@ -34,9 +34,7 @@
 <p align="center">
  <a href="https://linkedin.com/in/giannamantovani" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="alsiam"/>
- </a>
- <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="giannamantovani" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://cl.linkedin.com/in/giannamantovani?trk=profile-badge">Gianna Pinzón Mantovani</a></div>
-              
+ </a>        
  
  <a href="https://instagram.com/gia.mantovani" target="_blank">
   <img src="https://img.shields.io/badge/Instagram-fe4164?style=for-the-badge&logo=instagram&logoColor=white" alt="alsiam" />
@@ -73,4 +71,6 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 <br/>
+
+ <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="giannamantovani" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://cl.linkedin.com/in/giannamantovani?trk=profile-badge">Gianna Pinzón Mantovani</a></div>
 
