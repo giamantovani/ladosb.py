@@ -53,7 +53,7 @@
   
  ✌️ &emsp; Enjoy to do programming and sharing knowledge <br/><br/>
  ❤️ &emsp; Love to writing code and learning new features<br/><br/>
- 📧 &emsp; Reach me anytime: giamantovani1@gmail.com<br/><br/>
+ 📧 &emsp; Reach me anytime: gia.mantovani.it@gmail.com / giannamantovani.laboral@gmail.com <br/><br/>
  💬 &emsp; Ask me about anything on my GitHub(https://github.com/giamantovani)
 
 </p>
